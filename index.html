@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>حبة نثري | مطعم ومطبخ</title>
+    <meta name="description" content="حبة نثري - مطعم ومطبخ، طلبات التوصيل، حجوزات الولائم والمناسبات">
+    <meta property="og:title" content="حبة نثري | مطعم ومطبخ" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="icon.png" />
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after {
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #1a1f2e;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .wrapper {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 16px 60px;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 32px 0 24px;
+        }
+
+        .logo-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            max-width: 160px;
+            height: auto;
+            border-radius: 50%;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.2));
+        }
+
+        .brand-title {
+            font-size: 22px;
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .brand-sub {
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+        }
+
+        /* ===== BUTTONS ===== */
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 10px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 18px 24px;
+            border-radius: 16px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .link-btn:hover {
+            transform: translateY(-2px) scale(1.01);
+            filter: brightness(1.1);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        }
+
+        .link-btn:active {
+            transform: scale(0.97);
+        }
+
+        .link-btn .btn-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+        }
+
+        .link-btn .btn-icon svg {
+            width: 26px;
+            height: 26px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .link-btn .btn-icon svg.fill-icon {
+            fill: currentColor;
+            stroke: none;
+        }
+
+        .link-btn span {
+            flex: 1;
+        }
+
+        /* === COLORS matching the image === */
+
+        /* موقع النقرة - gradient green to yellow */
+        .btn-location-1 {
+            background: linear-gradient(to left, #f9c400, #4caf50);
+            box-shadow: 0 4px 20px rgba(76,175,80,0.4);
+        }
+
+        /* طلبات التوصيل - solid green */
+        .btn-delivery {
+            background: linear-gradient(to left, #2ecc40, #27ae60);
+            box-shadow: 0 4px 20px rgba(46,204,64,0.4);
+        }
+
+        /* موقع الشفا - gradient green to yellow */
+        .btn-location-2 {
+            background: linear-gradient(to left, #f9c400, #4caf50);
+            box-shadow: 0 4px 20px rgba(76,175,80,0.4);
+        }
+
+        /* حجوزات الولائم - orange/gold */
+        .btn-reservations {
+            background: linear-gradient(to left, #f39c12, #e67e22);
+            box-shadow: 0 4px 20px rgba(243,156,18,0.4);
+        }
+
+        /* سناب شات - yellow */
+        .btn-snapchat {
+            background: #FFFC00;
+            color: #000;
+            box-shadow: 0 4px 20px rgba(255,252,0,0.4);
+        }
+
+        .btn-snapchat .btn-icon svg {
+            stroke: #000;
+        }
+
+        /* تيك توك - gradient pink to cyan */
+        .btn-tiktok {
+            background: linear-gradient(to left, #00f2ea, #ff0050, #000000);
+            background: linear-gradient(135deg, #010101 0%, #ff0050 50%, #00f2ea 100%);
+            box-shadow: 0 4px 20px rgba(255,0,80,0.4);
+        }
+
+        /* انستقرام - purple to orange */
+        .btn-instagram {
+            background: linear-gradient(135deg, #405de6 0%, #833ab4 25%, #c13584 50%, #e1306c 75%, #fd1d1d 90%, #f77737 100%);
+            box-shadow: 0 4px 20px rgba(193,53,132,0.4);
+        }
+
+        /* تويتر/X - blue to cyan */
+        .btn-twitter {
+            background: linear-gradient(to left, #00acee, #1DA1F2);
+            box-shadow: 0 4px 20px rgba(29,161,242,0.4);
+        }
+
+        /* يوتيوب - red */
+        .btn-youtube {
+            background: linear-gradient(to left, #ff0000, #cc0000);
+            box-shadow: 0 4px 20px rgba(255,0,0,0.4);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.35);
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo-wrap">
+            <img src="icon.png" alt="حبة نثري" class="logo">
+            <div class="brand-title">حبة نثري</div>
+            <div class="brand-sub">مطعم ومطبخ</div>
+        </div>
+    </header>
+
+    <!-- LINKS -->
+    <div class="links-list">
+
+        <!-- موقع حبة نثري -->
+        <a href="https://maps.app.goo.gl/t1PRCwZVzeUS1d6M9?g_st=iw" class="link-btn btn-location-1" target="_blank" rel="noopener">
+            <div class="btn-icon">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <span>موقع حبة نثري ( مطعم ومطبخ )</span>
+        </a>
+
+        <!-- لحجوزات الولائم -->
+        <a href="tel:0558430222" class="link-btn btn-reservations">
+            <div class="btn-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.59a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <span>لحجوزات الولائم والمناسبات 📞</span>
+        </a>
+
+        <!-- طلبات التوصيل -->
+        <a href="tel:0558360222" class="link-btn btn-delivery">
+            <div class="btn-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.59a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <span>طلبات التوصيل وقسم السفري 📞</span>
+        </a>
+
+        <!-- سناب شات -->
+        <a href="https://www.snapchat.com/add/Hbat.Nathri" class="link-btn btn-snapchat" target="_blank" rel="noopener">
+            <div class="btn-icon">
+                <svg viewBox="0 0 24 24" stroke="#000"><path d="M12.017 2C9.2 2 6.98 3.634 6.02 6.067c-.22.563-.313 1.174-.297 1.8-.6-.07-1.195-.182-1.77-.365a1.09 1.09 0 0 0-.31-.047c-.29 0-.56.11-.76.31-.19.19-.29.44-.28.7.02.47.36.87.83.97.06.013.57.12.57.12s-.04.09-.07.16c-.08.21-.23.38-.43.47-.29.13-.6.2-.91.22-.38.02-.74.18-.98.47-.22.27-.3.62-.22.95.1.4.43.7.84.76.04.007.08.013.12.02.09.013.19.027.3.047.28.053.56.12.83.207.24.08.46.19.66.34.16.12.3.27.42.43.23.32.39.69.46 1.08.06.31.34.53.66.53.08 0 .17-.013.25-.04.24-.08.63-.16 1.12-.16.48 0 .97.08 1.4.3.33.16.63.4.84.7.2.27.5.43.82.43.07 0 .13-.007.2-.02.33-.067.63-.27.8-.567.16-.28.33-.52.55-.74.35-.35.79-.58 1.27-.7.27-.067.55-.1.82-.1.47 0 .87.08 1.11.16.07.027.15.04.22.04.31 0 .58-.2.65-.51.07-.32-.03-.66-.26-.87-.24-.22-.56-.34-.88-.37-.31-.02-.62-.09-.91-.22-.2-.09-.35-.26-.43-.47-.033-.073-.073-.16-.073-.16s.51-.107.57-.12c.47-.1.81-.5.83-.97.013-.26-.087-.51-.28-.7-.2-.2-.47-.31-.76-.31-.1 0-.207.016-.307.047-.575.183-1.17.295-1.77.365a4.867 4.867 0 0 0-.297-1.8C17.02 3.634 14.8 2 12.017 2z"/></svg>
+            </div>
+            <span>حسابنا في سناب شات</span>
+        </a>
+
+        <!-- تيك توك -->
+        <a href="https://www.tiktok.com/@Hbat.Nathri" class="link-btn btn-tiktok" target="_blank" rel="noopener">
+            <div class="btn-icon">
+                <svg viewBox="0 0 24 24" class="fill-icon"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.22 8.22 0 0 0 4.81 1.55V6.79a4.85 4.85 0 0 1-1.04-.1z"/></svg>
+            </div>
+            <span>حسابنا في التيك توك</span>
+        </a>
+
+        <!-- انستقرام -->
+        <a href="https://www.instagram.com/Hbat.Nathri" class="link-btn btn-instagram" target="_blank" rel="noopener">
+            <div class="btn-icon">
+                <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <span>حسابنا في الانستقرام</span>
+        </a>
+
+        <!-- تويتر -->
+        <a href="https://twitter.com/Hbat.Nathri" class="link-btn btn-twitter" target="_blank" rel="noopener">
+            <div class="btn-icon">
+                <svg viewBox="0 0 24 24" class="fill-icon"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zM17.083 20.03h1.833L7.085 4.126H5.117L17.083 20.03z"/></svg>
+            </div>
+            <span>حسابنا في تويتر</span>
+        </a>
+
+        <!-- يوتيوب -->
+        <a href="https://www.youtube.com/@Hbat.Nathri" class="link-btn btn-youtube" target="_blank" rel="noopener">
+            <div class="btn-icon">
+                <svg viewBox="0 0 24 24" class="fill-icon"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </div>
+            <span>حسابنا في اليوتيوب</span>
+        </a>
+
+    </div>
+
+    <footer>تصميم وتطوير <a href="https://shadowdesigner.net/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6);text-decoration:none;font-weight:700;">shadowdesigner</a></footer>
+
+</div>
+
+</body>
+</html>
